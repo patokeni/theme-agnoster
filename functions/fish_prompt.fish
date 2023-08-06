@@ -322,6 +322,11 @@ function prompt_status -d "the symbols for a non zero exit status, root and back
     end
 end
 
+function prompt_time
+    set cur_dateTime (date +%H:%M:%S)
+    prompt_segment red black "⌚ $cur_dateTime"
+end
+
 # ===========================
 # Apply theme
 # ===========================
@@ -341,5 +346,6 @@ function fish_prompt
       prompt_svn
     end
   end
+  prompt_time
   prompt_finish
 end
